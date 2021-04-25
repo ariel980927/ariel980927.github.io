@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>課堂作業06</title>
+	<style>
+		h4 {
+			color: red;
+		}
+        div {
+            color: blue;
+			margin: 5px;
+		}
+        table{
+            border-color: black;
+        }
+        
+        th{
+            text-align: center;
+            color:blue;
+        }
+        tr{
+            text-align: center;
+            
+        }
+        td{
+            vertical-align: middle;
+            color: black;
+        }
+	</style> 
+</head>
+<body>
+<form id="form01">
+    姓名:<input type="text" name="name01" value="楊芯瑞"><br>
+    收件住址:<input type="text" name="address01" value="桃園市桃園區宏昌七街46號5樓"><br>
+    電話: <input type="tel" name="tel01" value="0988004909"><br>
+    電子郵件: <input type="email" name="email01" value="ariel927@kimo.com"><br>
+    指定送貨日期:<input type="date" name="date01"><br>
+    衣服款式：<br><input type="radio" name="clothes" id="clothes01" value="三眼怪系列刷毛大學TEE(1件)">三眼怪系列刷毛大學TEE(1件)690元<br>
+    <input type="radio" name="clothes" id="clothes02" value="MIT唐老鴨系列長袖(1件)">MIT唐老鴨系列長袖(1件)599元<br>
+    <input type="radio" name="clothes" id="clothes03" value="U領短版毛織上衣(1件)">U領短版毛織上衣(1件)390元<br>
+    <input type="radio" name="clothes" id="clothes04" value="拼接荷葉碎花洋裝(1件)">拼接荷葉碎花洋裝(1件)890元<br>
+    <input type="radio" name="clothes" id="clothes05" value="拼接剪裁織帶調節過膝裙(1件)">拼接剪裁織帶調節過膝裙(1件)550元<br>
+    
+
+</form>
+    <button onclick="shoppingInfo()"><h4>結帳</h4></button>
+    <div id="demo"></div>
+    <table border="2" width="40%" cellspacing="0" cellpadding="0">
+<script>
+    function shoppingInfo(){
+        var x = document.getElementById("form01");
+        var item = "";
+        var price = 0;
+        var text ="<h4>您的購物資訊如下:</h4>";
+        var i;
+        for (i=0; i<5; i++) {
+             switch(i){
+                 case 0:
+                     item = "姓名:";
+                     break;
+                 case 1:
+                     item = "收件地址:";
+                     break;
+                 case 2:
+                     item = "電話:";
+                     break;
+                 case 3:
+                     item = "電子郵件:";
+                     break;
+                 case 4:
+                     item = "指定送貨日期:";
+                     break;
+        }
+        text += item + x.elements[i].value + "<br>";
+    }
+    for(i=5; i<=7; i++) {
+        if(x.elements[i].checked==true){
+                switch(i){
+                    case 5: price=475; break;
+                    case 6: price=435; break;
+                    case 7: price=749; break;
+                }
+                text += "衣服款式:"+ x.elements[i].value+"<br>";
+                text += "價格合計:"+ price+"元<br>";
+            }
+        }
+        document.getElementById("demo").innerHTML = text;
+    }
+</script>
+
+</table>
+</body>
+    
+    <h3>資料來源:</h3>
+		<ul>
+			<li><a href="https://www.50-shop.com/Shop/itemList.aspx?m=6&p=417" target="_blank">參考網址</a></li>
+		</ul>
+</html>
