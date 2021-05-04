@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 	   <title>課堂作業08</title>
-       <meta charset="UTF-8">
+       <meta charset="utf-8">
     
     
 </head>
@@ -19,7 +19,7 @@
 		textarea{
 			margin-top: 15px;
             width: 60%;
-            align-content: center;
+            alignment: center;
 		}
         span{
             color: red;
@@ -53,11 +53,11 @@
                 const file = e.target.result;
                 const lines = file.split(/\r\n|\n/);
                 textarea.value = lines.join('\n');
-                var reg = new RegExp(x.elements[0].value);
+                var reg = new RegExp(x.element[0].value);
                 lineNo = textarea.value.search(reg);
-                text += "所搜尋的字串:「"+reg+"」出現在第" + lineNo + "個字<br>";
-                text += "...<br>";
-                for (i = lineNo-10; i <= lineNo +1 5;i++){
+                text += "所搜尋的字串:「" +reg+ "」出現在第" + lineNo + "個字<br>";
+                text += "...";
+                for (i = lineNo-10; i <= lineNO + 15;i++){
                     text += textarea.value[i];
                 }
                 text += "...<br>";
